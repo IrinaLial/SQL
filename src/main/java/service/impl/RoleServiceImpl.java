@@ -8,6 +8,7 @@ import service.RoleService;
 import java.util.List;
 
 public class RoleServiceImpl implements RoleService {
+    @Override
     public void save(Role role) {
         RoleDao roleDao = new RoleDaoImpl();
         roleDao.save(role);
@@ -26,7 +27,7 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(Integer id) {
         RoleDao roleDao = new RoleDaoImpl();
         roleDao.delete(id);
     }

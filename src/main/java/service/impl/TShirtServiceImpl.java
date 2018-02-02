@@ -8,6 +8,8 @@ import service.TShirtService;
 import java.util.List;
 
 public class TShirtServiceImpl implements TShirtService {
+
+    @Override
     public void save(TShirt tShirt) {
         TShirtDao tShirtDao = new TShirtDaoImpl();
         tShirtDao.save(tShirt);
@@ -25,7 +27,7 @@ public class TShirtServiceImpl implements TShirtService {
         tShirtDao.update(tShirt);
     }
     @Override
-    public void delete(int id) {
+    public void delete(Integer id) {
         TShirtDao tShirtDao = new TShirtDaoImpl();
         tShirtDao.delete(id);
     }

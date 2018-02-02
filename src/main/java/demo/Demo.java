@@ -2,10 +2,13 @@ package demo;
 
 import config.Database;
 import model.Laptop;
+import model.TShirt;
 import model.User;
 import service.LaptopService;
+import service.TShirtService;
 import service.UserService;
 import service.impl.LaptopServiceImpl;
+import service.impl.TShirtServiceImpl;
 import service.impl.UserServiceImpl;
 
 import java.sql.*;
@@ -15,18 +18,18 @@ public class Demo {
 
     public static void main(String[] args) throws SQLException {
 
-//       User user = new User();
-//       user.setName("Julia");
-//       user.setSkills("PHP");
+//        User user = new User();
+//        user.setName("Julia");
+//        user.setSkills("PHP");
 //
-//       UserService userService = new UserServiceImpl();
-//       userService.save(user);
+//        UserService userService = new UserServiceImpl();
+//        userService.save(user);
 //
-//       List<User> users = userService.getAll();
-//       users.forEach(System.out::println);
-
-//     userService.update(user);
-//     userService.delete(11);
+//        List<User> users = userService.getAll();
+//        users.forEach(System.out::println);
+//
+//        userService.update(user);
+//        userService.delete(11);
 
         Laptop laptop = new Laptop();
         laptop.setName("Sony");
@@ -34,29 +37,23 @@ public class Demo {
         LaptopService laptopService = new LaptopServiceImpl();
         laptopService.save(laptop);
 
+        List<Laptop> laptops = laptopService.getAll();
+        laptops.forEach(System.out::println);
 
-        Connection connection = Database.getConnection();
+        laptopService.delete(8);
+        laptopService.update(laptop);
+
+//        TShirt tShirt = new TShirt();
+//        tShirt.setSize(3);
+//        tShirt.setColor("Blue");
 //
-        Statement statement = connection.createStatement();
-//       statement.execute("INSERT INTO miracle.users (name,skills) VALUES ('Ann','JAVA')");
-//       statement.executeUpdate("UPDATE miracle.users SET name = 'Alex', skills = 'Java' WHERE id = 1");
-//       statement.executeUpdate("DELETE FROM miracle.users WHERE id = 5");
-
-//       ResultSet resultSet = statement.executeQuery("SELECT * FROM miracle.users");
-//       while (resultSet.next()) {
-//           String name = resultSet.getString("name");
-//           String skills = resultSet.getString("skills");
-//          System.out.println(name + " " + skills);
-//        }
-//        connection.close();
-
-//       statement.execute("INSERT INTO miracle.laptop (name) VALUES ('MAC')");
-//       ResultSet resultSet = statement.executeQuery("SELECT * FROM miracle.laptop");
-//       while (resultSet.next()) {
-//           String name = resultSet.getString("name");
-//           String id = resultSet.getString("id");
-//          System.out.println(name + " " + id);
-//        }
-//        connection.close();
+//        TShirtService tShirtService = new TShirtServiceImpl();
+//        tShirtService.save(tShirt);
+//
+//        List<TShirt> tShirts = tShirtService.getAll();
+//        tShirts.forEach(System.out::println);
+//
+//        tShirtService.delete(4);
+//        tShirtService.update(tShirt);
     }
 }

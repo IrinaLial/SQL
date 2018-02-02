@@ -8,7 +8,7 @@ import service.UserService;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
-
+    @Override
     public void save(User user) {
         UserDao userDao = new UserDaoImpl();
         userDao.save(user);
@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(Integer id) {
         UserDao userDao = new UserDaoImpl();
         userDao.delete(id);
     }

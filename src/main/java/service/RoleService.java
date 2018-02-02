@@ -5,9 +5,5 @@ import model.User;
 
 import java.util.List;
 
-public interface RoleService {
-    void save(Role role);
-    List<Role> getAll();
-    void update(Role role);
-    void delete(int id);
+public interface RoleService extends GenericService <Role, Integer> {
 }
